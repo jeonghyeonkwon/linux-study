@@ -30,7 +30,7 @@ printenv, export를 이용하여 환경 변수명 검색 가능
 
 - 확장자가 .sh 파일
 
-```shell
+```bash
 #! /bin/bash
 
 exit 0
@@ -67,7 +67,7 @@ str5=\$str3
 
 2. 숫자 계산
 
-```shell
+```bash
 #! /bin/bash
 
 num=100 + 200
@@ -83,7 +83,7 @@ num3=`expr \( $num2 + 200 \) / 10 \* 2`
 
 3. 파라미터 변수
 
-```shell
+```bash
 #! /bin/bash
 
 echo "첫 번째 파라미터 $0"
@@ -96,7 +96,7 @@ echo "전체 파라미터 $*"
 
 4. if ~ else
 
-```shell
+```bash
 if [ 조건 ] # 조건 양 옆에 띄어쓰기 해야됨
 then
 
@@ -130,7 +130,7 @@ fi  # 끝 맺음
 
 5. case ~ esac문
 
-```shell
+```bash
 
 case "$1" in
 
@@ -147,7 +147,7 @@ esac #case문 끝맺음
 
 6. for ~ in
 
-```shell
+```bash
 for 타겟 in value1 value2 value3 ...
 do
     내용
@@ -157,7 +157,7 @@ done
 
 7. while
 
-```shell
+```bash
 
 # 무한 루프
 
@@ -172,9 +172,10 @@ while [ : ]
 do
     실행문
 
-
     echo "실행 됨"
-    continue;;
+
+
 done
 
+# continue break exit return 조합하여 사용
 ```
