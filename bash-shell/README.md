@@ -1,5 +1,7 @@
 # 셸 스크립트 프로그래밍 정리
 
+[출처 : 이것이 Fedora 리눅스다]
+
 ## 환경 변수
 
 ```
@@ -46,7 +48,7 @@ chmod +x 파일명 또는 chmod 755 파일명 둘 중 하나로 실행 가능 �
 
 1. 문자열
 
-```shell
+```bash
 #! /bin/bash
 
 str1=string
@@ -178,4 +180,73 @@ do
 done
 
 # continue break exit return 조합하여 사용
+```
+
+8. 함수
+
+```bash
+func(){
+    echo "$1 $2"
+}
+
+func string1 string2
+```
+
+9. eval
+
+```bash
+string = "mkdir folder"
+
+eval string
+
+# 명령문으로 실행
+
+```
+
+10. export
+
+```bash
+
+file1.sh
+
+export string="노출 String"
+
+```
+
+```bash
+
+file2.sh
+
+echo $string
+
+```
+
+11. set, $(명령어)
+
+```bash
+string = $(date) # 오늘 날짜 받기
+
+set $(date) # 파라미터로 받기
+```
+
+12. shift
+
+- 파라미터 변수를 왼쪽으로 한 단계식 이동
+
+```bash
+
+param = "1 2 3 4 5 6"
+shift
+
+param = "2 3 4 5 6"
+
+shift
+param = "3 4 5 6"
+
+shift
+param = "4 5 6"
+
+# 파라미터 순서에 값이 저렇게 된다는 뜻
+# $1 = 1 => 2 => 3 => 4 로 된다는 뜻
+
 ```
