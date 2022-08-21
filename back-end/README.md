@@ -71,3 +71,9 @@
 
 - wget url
   - -c : 끊긴 파일 다시 다운받기
+
+### 아마존 리눅스 한국 시간 관련 설정
+
+1. sudo rm /etc/localtime
+
+2. sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
