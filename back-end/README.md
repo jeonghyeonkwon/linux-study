@@ -1,4 +1,4 @@
-# 백앤드 관련 기본 명령어
+# 백앤드 관련 기본 지식 (레드햇 계열)
 
 ### 디렉토리
 
@@ -43,9 +43,18 @@
 
 ```
 
+### 링크 파일 만들기
+
+```bash
+
+ln -s (소프트 링크) - 바로가기 만들기
+
+```
+
 ### 별칭 등록
 
 ```bash
+
     alias 키값="내용"
 
     # example
@@ -55,7 +64,21 @@
     # shell 설정
     echo "alias k='kubectl'" >> ~/.bashrc
     source ~/.bashrc
+
 ```
+
+### 파이프 라인 ( '|' )
+
+- 찾은 리스트를 가공할 때 사용
+- 예) yum list | grep [패키지 이름]
+
+### whoami
+
+- 로그인한 아이디 확인
+
+### 서비스 목록 확인 (+ : 실행중 , - : 실행 중지)
+
+- service --status-all
 
 ### 파일 소유권
 
@@ -77,3 +100,7 @@
 1. sudo rm /etc/localtime
 
 2. sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+### 리눅스에서 url 호출
+
+- curl "url 주소"
