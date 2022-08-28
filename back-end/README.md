@@ -153,3 +153,18 @@ sudo kill -9 `ps -ef | grep tomcat8 | grep -v grep | awk '{print $1}'`
   - 파일로 남기고 싶으면?
     - 파일 생성, 권한 변경 후
     - sudo tail -f catalina.out > file.log
+
+### 소프트 웨어 패키지
+
+- 업데이트
+  - sudo yum update -y
+- 찾기
+  - sudo yum search "java"
+- jdk 11 설치
+  - 아마존 리눅스는 sudo yum install java-11-amazon-corretto-headless
+
+### nohup
+
+- 리눅스에서 프로세스를 실행한 터미널의 세션이 끊겨도 백그라운드로 계속 실행할 수 있게 해주는 것
+- 예시
+  - nohup java -jar \*.jar & (&는 백그라운드 실행)
