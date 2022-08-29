@@ -138,9 +138,18 @@ sudo kill -9 `ps -ef | grep tomcat8 | grep -v grep | awk '{print $1}'`
 
 ### 아마존 리눅스 한국 시간 관련 설정
 
-1. sudo rm /etc/localtime
+- 현재 시간으로 설정된 나라 확인
+  - timedatectl
 
-2. sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+1. 방법1
+
+- sudo rm /etc/localtime
+  - sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+2. 방법2
+
+- timedatectl list-timezones | grep Seoul
+  - sudo timedatectl set-timezone Asia/Seoul
 
 ### 리눅스에서 url 호출
 
@@ -165,6 +174,15 @@ sudo kill -9 `ps -ef | grep tomcat8 | grep -v grep | awk '{print $1}'`
 
 ### nohup
 
-- 리눅스에서 프로세스를 실행한 터미널의 세션이 끊겨도 백그라운드로 계속 실행할 수 있게 해주는 것
+- 리눅스에서 프로세스를 실행한 터미널의 세션이 끊겨도 백 그라운드로 계속 실행할 수 있게 해주는 것
 - 예시
   - nohup java -jar \*.jar & (&는 백그라운드 실행)
+- nohup.out이라는 파일이 생긴다
+- tail -f(계속 구독) nohup.out
+- 일반 로그와 에러 로그 분리
+  - nohup java -jar spring-0.0.1-SNAPSHOT.jar 1>log.out 2>err.out &
+
+### netstat (네트워크 연결상태 확인용)
+
+- 예시
+  - netstat -nlpt
