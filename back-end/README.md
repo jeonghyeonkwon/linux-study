@@ -90,6 +90,24 @@ sudo kill -9 `ps -ef | grep tomcat8 | grep -v grep | awk '{print $1}'`
 
 # 백틱(`)으로 감싸줘야 한다.
 
+#!!!! OR
+pgrep -f 타깃
+
+```
+
+### 스프링 부트 프로젝트 강제 종료 시키기 (pgrep 사용)
+
+```bash
+# spring-stop.sh
+
+echo "Sprinboot Stop......"
+
+SPRING_PID=$(pgrep -f *.jar)
+
+echo $SPRING_PID
+
+kill -9 $SPRING_PID
+
 ```
 
 ### 서비스 목록 확인 (+ : 실행중 , - : 실행 중지)
@@ -186,3 +204,11 @@ sudo kill -9 `ps -ef | grep tomcat8 | grep -v grep | awk '{print $1}'`
 
 - 예시
   - netstat -nlpt
+
+### crontab
+
+- 주기적 실행 명령어 (몇 분마다, 몇 시간 마다, 몇 일마다, 몇 시간마다, 몇 요일마다 실행하겟다)
+- (\* \* \* \* \*) : 분(0~60) 시(0~23) 일(1~31) 월(1~12) 요일(0~7)
+- 예시
+  - crontab -e 입력
+  - \* \* \* \* \* ls -l 1>>cron.log 내용 저장
